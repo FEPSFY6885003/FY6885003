@@ -258,4 +258,78 @@
     <!-- Last update (timestamp) -->
     <div id="last-updated">Loading last update time...</div>
     <button onclick="verifyLastUpdatedTime()" style="margin: 10px 0; padding: 6px 14px;">
-      Verify
+      Verify Last Modified Time
+    </button>
+
+    <!-- Word count display -->
+    <p id="totalWordCount"></p>
+
+  </div> <!-- end page-container -->
+
+  <!-- TIMESTAMP SCRIPT -->
+  <script>
+    async function getLastUpdatedTime() {
+      const username = 'FEPSFY6885003';
+      const repo = 'FY6885003';
+      const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/vnd.github.v3+json',
+          }
+        });
+        if (!response.ok) {
+          throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+        }
+        const commits = await response.json();
+        if (commits && commits.length > 0) {
+          const lastCommitDate = new Date(commits[0].commit.committer.date);
+          document.getElementById('last-updated').innerText =
+            `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+        } else {
+          document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+        }
+      } catch (error) {
+        console.error('Error fetching the last updated time:', error);
+        document.getElementById('last-updated').innerText =
+          'Error fetching update time. Please check the repository details.';
+      }
+    }
+
+    function verifyLastUpdatedTime() {
+      document.getElementById('last-updated').innerText = 'Verifying...';
+      getLastUpdatedTime().then(() => {
+        alert('Last modified time has been successfully verified from GitHub API.');
+      });
+    }
+  </script>
+
+  <!-- WORD COUNT SCRIPT -->
+  <script>
+    function getSectionWordCount(sectionId) {
+      const el = document.getElementById(sectionId);
+      if (!el) return 0;
+      const text = el.textContent || '';
+      const words = text.trim().split(/\s+/).filter(Boolean);
+      return words.length;
+    }
+
+    function displayTotalWordCount() {
+      const introCount = getSectionWordCount('introduction-section');
+      const analysisCount = getSectionWordCount('analysis-discussion-section');
+      const conclusionCount = getSectionWordCount('conclusion-section');
+      const total = introCount + analysisCount + conclusionCount;
+      document.getElementById('totalWordCount').innerText =
+        `Total word count (Introduction + Analysis & Discussion + Conclusion): ${total}`;
+    }
+
+    // Run both timestamp and word count on page load
+    window.addEventListener('load', () => {
+      getLastUpdatedTime();
+      displayTotalWordCount();
+    });
+  </script>
+
+</body>
+</html>
