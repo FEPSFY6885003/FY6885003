@@ -4,165 +4,276 @@
   <meta charset="UTF-8">
   <title>ENG0018 Conference Paper - Moore's Law</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Optional W3CSS (you can keep or remove) -->
+  <!-- Optional W3CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
     body {
-      background-color: #FFFFFF;
-      margin-left: 50px;
+      background-color: #f5f5f5;
+      margin: 0;
       font-family: Calibri, Arial, sans-serif;
-      line-height: 1.4;
+      line-height: 1.5;
     }
-    .content {
-      max-width: 900px;
+
+    .page-container {
+      max-width: 1000px;
+      margin: 20px auto 40px auto;
+      background-color: #ffffff;
+      padding: 20px 40px 40px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 6px;
     }
-    table.toc {
-      border-collapse: collapse;
-      margin: 10px 0 20px 0;
+
+    .header-center {
+      text-align: center;
     }
-    table.toc th, table.toc td {
-      border: 1px solid #000;
-      padding: 6px 10px;
-      text-align: left;
+
+    img.banner {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
     }
+
     h1, h2, h3 {
       font-family: Calibri, Arial, sans-serif;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 10px 0 20px 0;
+    }
+
+    .toc-wrapper {
+      margin: 15px 0 25px 0;
+    }
+
+    table.toc {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #fafafa;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    table.toc th {
+      background-color: #003366;
+      color: #ffffff;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+
+    table.toc td {
+      border-top: 1px solid #ddd;
+      padding: 6px 10px;
+    }
+
+    table.toc a {
+      text-decoration: none;
+      color: #003366;
+    }
+
+    table.toc a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    #last-updated {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    #totalWordCount {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button {
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #003366;
+      background-color: #003366;
+      color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 
 <body>
-  <!-- Banner and title -->
-  <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
-  <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
-  <h2>Student URN: 6885003</h2>
-  <hr>
-  <h2><b>Conference paper: The Future of Computing Beyond Moore's Law: Limits, New Materials, and Emerging Architectures</b></h2>
-  <hr>
 
-  <div class="content">
+  <div class="page-container">
+    <!-- Banner and title -->
+    <img src="WebBanner2023.png" alt="Banner" class="banner">
+
+    <div class="header-center">
+      <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
+      <h2>Student URN: 6885003</h2>
+      <hr>
+      <h2><b>Conference Paper: The Future of Computing Beyond Moore's Law: Limits, New Materials, and Emerging Architectures</b></h2>
+      <hr>
+    </div>
 
     <!-- TABLE OF CONTENTS -->
-    <table class="toc">
-      <tr>
-        <th>Table of contents</th>
-      </tr>
-      <tr>
-        <td><a href="#abstract">Abstract</a></td>
-      </tr>
-      <tr>
-        <td><a href="#introduction">Introduction</a></td>
-      </tr>
-      <tr>
-        <td><a href="#analysis-discussion">Analysis and Discussion</a></td>
-      </tr>
-      <tr>
-        <td><a href="#conclusion">Conclusion</a></td>
-      </tr>
-      <tr>
-        <td><a href="#references">References</a></td>
-      </tr>
-    </table>
+    <div class="toc-wrapper">
+      <table class="toc">
+        <tr>
+          <th>Table of Contents</th>
+        </tr>
+        <tr>
+          <td><a href="#abstract-section">Abstract</a></td>
+        </tr>
+        <tr>
+          <td><a href="#introduction-section">Introduction</a></td>
+        </tr>
+        <tr>
+          <td><a href="#analysis-discussion-section">Analysis and Discussion</a></td>
+        </tr>
+        <tr>
+          <td><a href="#conclusion-section">Conclusion</a></td>
+        </tr>
+        <tr>
+          <td><a href="#references">References</a></td>
+        </tr>
+      </table>
+    </div>
 
     <!-- ABSTRACT -->
-    <h2 id="abstract">Abstract</h2>
-    <p>
-      Moore’s Law has driven exponential advances in computing for over five decades by predicting that the number of components on an integrated circuit would double roughly every two years. However, as silicon transistors approach atomic-scale dimensions, physical, economic and technological barriers are slowing this trend. This article examines the key factors contributing to the decline of Moore’s Law, including the end of Dennard scaling, increased transistor variability and the high cost of advanced lithography. It then explores emerging technologies that could sustain future performance growth, such as two-dimensional semiconductor materials, specialised computer architectures and improvements in algorithms and data movement efficiency. Although no single technology can fully replace classical scaling, the combined progress in materials science, device engineering and heterogeneous architectures offers promising pathways. These developments suggest that while Moore’s Law may be reaching its limits, innovation in computing is far from slowing down.
-    </p>
+    <h2>Abstract</h2>
+    <div id="abstract-section">
+      <p>
+        Moore’s Law has driven exponential advances in computing for over five decades by predicting that the number of components on an integrated circuit would double roughly every two years. However, as silicon transistors approach atomic-scale dimensions, physical, economic and technological barriers are slowing this trend. This article examines the key factors contributing to the decline of Moore’s Law, including the end of Dennard scaling, increased transistor variability and the high cost of advanced lithography. It then explores emerging technologies that could sustain future performance growth, such as two-dimensional semiconductor materials, specialised computer architectures and improvements in algorithms and data movement efficiency. Although no single technology can fully replace classical scaling, the combined progress in materials science, device engineering and heterogeneous architectures offers promising pathways. These developments suggest that while Moore’s Law may be reaching its limits, innovation in computing is far from slowing down.
+      </p>
+    </div>
 
     <!-- INTRODUCTION -->
-    <h2 id="introduction">Introduction</h2>
-    <p>
-      Since the 1960s, the semiconductor industry has relied on a remarkable trend known as Moore’s Law: the observation that the number of components on an integrated circuit doubles roughly every two years. This steady miniaturisation of transistors has driven exponential improvements in computing performance, enabling progress in consumer electronics, scientific research, data processing and global communications. For more than five decades, advances in silicon lithography have allowed engineers to shrink transistor dimensions while maintaining affordable manufacturing costs and manageable power consumption. However, as transistors approach the scale of only a few dozen atoms, the technological foundations that once made Moore’s Law reliable are beginning to fail. Rising fabrication costs, quantum effects and fundamental physical limits now restrict further scaling, leading many experts to predict that Moore’s Law will plateau within the next decade
-      <a href="#ref-shalf">(Shalf, 2020)</a>.
-    </p>
-    <p>
-      This article examines why Moore’s Law is slowing, the scientific and economic factors driving this shift, and the emerging technologies that could sustain future improvements in computer performance. In particular, it explores new materials such as two-dimensional semiconductors, as well as architectural and algorithmic innovations that may allow computing to advance even after traditional transistor scaling ends
-      <a href="#ref-li">(Li et al., 2019)</a>;
-      <a href="#ref-leiserson">(Leiserson et al., 2020)</a>.
-    </p>
+    <h2>Introduction</h2>
+    <div id="introduction-section">
+      <p>
+        Since the 1960s, the semiconductor industry has relied on a remarkable trend known as Moore’s Law: the observation that the number of components on an integrated circuit doubles roughly every two years. This steady miniaturisation of transistors has driven exponential improvements in computing performance, enabling progress in consumer electronics, scientific research, data processing and global communications. For more than five decades, advances in silicon lithography have allowed engineers to shrink transistor dimensions while maintaining affordable manufacturing costs and manageable power consumption. However, as transistors approach the scale of only a few dozen atoms, the technological foundations that once made Moore’s Law reliable are beginning to fail. Rising fabrication costs, quantum effects and fundamental physical limits now restrict further scaling, leading many experts to predict that Moore’s Law will plateau within the next decade
+        <a href="#ref-shalf">(Shalf, 2020)</a>.
+      </p>
+      <p>
+        This article examines why Moore’s Law is slowing, the scientific and economic factors driving this shift, and the emerging technologies that could sustain future improvements in computer performance. In particular, it explores new materials such as two-dimensional semiconductors, as well as architectural and algorithmic innovations that may allow computing to advance even after traditional transistor scaling ends
+        <a href="#ref-li">(Li et al., 2019)</a>;
+        <a href="#ref-leiserson">(Leiserson et al., 2020)</a>.
+      </p>
+    </div>
 
     <!-- ANALYSIS & DISCUSSION -->
-    <h2 id="analysis-discussion">Analysis and Discussion</h2>
+    <h2>Analysis and Discussion</h2>
+    <div id="analysis-discussion-section">
 
-    <h3>Why Moore’s Law Is Slowing Down</h3>
-    <p>
-      The original driver of Moore’s Law was the industry’s ability to continually reduce the size of silicon transistors. Smaller transistors switch faster, consume less power and allow more components to be placed on a single chip. However, as lithography approaches atomic scales, this approach is reaching unavoidable limits. According to the International Technology Roadmap for Semiconductors (ITRS), lithographic scaling was predicted to end by around 2021 – nearly a decade earlier than originally expected
-      <a href="#ref-shalf">(Shalf, 2020)</a>. When transistor gate lengths shrink to just a few nanometres, only a dozen or so silicon atoms define the critical features of the device, meaning that further miniaturisation becomes physically impractical.
-    </p>
-    <p>
-      A second factor is the breakdown of Dennard scaling, the principle that power density remains constant as transistors shrink. Dennard scaling effectively ended around 2004, leading to stagnation in clock speeds and a shift towards multi-core processors. As shown in Figure 2 of Shalf’s article, increases in performance, clock frequency and core count flatten after the mid-2000s, indicating that even if more transistors can be added, they no longer provide proportional performance gains
-      <a href="#ref-shalf">(Shalf, 2020)</a>.
-    </p>
-    <p>
-      Economic limitations further exacerbate the problem. Each new generation of semiconductor fabrication equipment increases in cost, making traditional scaling financially unsustainable. As a result, Moore’s Law is expected to “flatten by 2025”, with diminishing returns from further investment in silicon technology
-      <a href="#ref-shalf">(Shalf, 2020)</a>.
-    </p>
+      <h3>1. Why Moore’s Law Is Slowing Down</h3>
+      <p>
+        The original driver of Moore’s Law was the industry’s ability to continually reduce the size of silicon transistors. Smaller transistors switch faster, consume less power and allow more components to be placed on a single chip. However, as lithography approaches atomic scales, this approach is reaching unavoidable limits. According to the International Technology Roadmap for Semiconductors (ITRS), lithographic scaling was predicted to end by around 2021 – nearly a decade earlier than originally expected
+        <a href="#ref-shalf">(Shalf, 2020)</a>. When transistor gate lengths shrink to just a few nanometres, only a dozen or so silicon atoms define the critical features of the device, meaning that further miniaturisation becomes physically impractical.
+      </p>
+      <p>
+        A second factor is the breakdown of Dennard scaling, the principle that power density remains constant as transistors shrink. Dennard scaling effectively ended around 2004, leading to stagnation in clock speeds and a shift towards multi-core processors. As shown in Figure 2 of Shalf’s article, increases in performance, clock frequency and core count flatten after the mid-2000s, indicating that even if more transistors can be added, they no longer provide proportional performance gains
+        <a href="#ref-shalf">(Shalf, 2020)</a>.
+      </p>
+      <p>
+        Economic limitations further exacerbate the problem. Each new generation of semiconductor fabrication equipment increases in cost, making traditional scaling financially unsustainable. As a result, Moore’s Law is expected to “flatten by 2025”, with diminishing returns from further investment in silicon technology
+        <a href="#ref-shalf">(Shalf, 2020)</a>.
+      </p>
 
-    <h3>Physical Limits of Silicon Transistors</h3>
-    <p>
-      At nanometre scales, silicon transistors face significant physical challenges. As channels become extremely thin, electrons experience increased scattering from imperfections on the surfaces of the material, reducing mobility and slowing down current flow. The Nature article on two-dimensional (2D) semiconductors highlights that even alternative bulk materials such as germanium or indium gallium arsenide suffer from similar problems when reduced to nanometre thicknesses
-      <a href="#ref-li">(Li et al., 2019)</a>. Imperfections, atomic vibrations and surface interactions disrupt electron movement more severely as dimensions shrink.
-    </p>
-    <p>
-      Quantum mechanical effects also become more significant. Leakage currents, variability in device behaviour and thermal instability all make continued silicon scaling unreliable. These issues demonstrate that the slowdown of Moore’s Law is not simply an engineering challenge but a fundamental physical boundary.
-    </p>
+      <h3>2. Physical Limits of Silicon Transistors</h3>
+      <p>
+        At nanometre scales, silicon transistors face significant physical challenges. As channels become extremely thin, electrons experience increased scattering from imperfections on the surfaces of the material, reducing mobility and slowing down current flow. The Nature article on two-dimensional (2D) semiconductors highlights that even alternative bulk materials such as germanium or indium gallium arsenide suffer from similar problems when reduced to nanometre thicknesses
+        <a href="#ref-li">(Li et al., 2019)</a>. Imperfections, atomic vibrations and surface interactions disrupt electron movement more severely as dimensions shrink.
+      </p>
+      <p>
+        Quantum mechanical effects also become more significant. Leakage currents, variability in device behaviour and thermal instability all make continued silicon scaling unreliable. These issues demonstrate that the slowdown of Moore’s Law is not simply an engineering challenge but a fundamental physical boundary.
+      </p>
 
-    <h3>2D Materials as a Potential Successor</h3>
-    <p>
-      One promising response to these limitations is the exploration of 2D semiconductors – crystalline materials only one atom thick. Examples include molybdenum disulfide (MoS<sub>2</sub>) and tungsten diselenide (WSe<sub>2</sub>). Because these materials have extremely flat, defect-free surfaces, electrons experience less scattering, allowing for potentially faster and more efficient transistors
-      <a href="#ref-li">(Li et al., 2019)</a>. Their atomic thinness also means they can be packed far more densely than silicon, offering a possible route to extending Moore’s Law beyond current limits.
-    </p>
-    <p>
-      However, Li et al. emphasise that three major research challenges must be addressed before 2D materials can be used in commercial devices
-      <a href="#ref-li">(Li et al., 2019)</a>. First, predicting their electronic properties accurately is difficult because real materials behave differently from idealised models. Second, growing large, defect-free sheets of 2D material is technically challenging, with many samples showing grain boundaries or inconsistent thickness. Third, assessing the performance of 2D transistors is hindered by inconsistent measurement techniques, making it difficult to compare results across research groups. These issues highlight why 2D materials remain a long-term rather than immediate solution.
-    </p>
+      <h3>3. 2D Materials as a Potential Successor</h3>
+      <p>
+        One promising response to these limitations is the exploration of 2D semiconductors – crystalline materials only one atom thick. Examples include molybdenum disulfide (MoS<sub>2</sub>) and tungsten diselenide (WSe<sub>2</sub>). Because these materials have extremely flat, defect-free surfaces, electrons experience less scattering, allowing for potentially faster and more efficient transistors
+        <a href="#ref-li">(Li et al., 2019)</a>. Their atomic thinness also means they can be packed far more densely than silicon, offering a possible route to extending Moore’s Law beyond current limits.
+      </p>
+      <p>
+        However, Li et al. emphasise that three major research challenges must be addressed before 2D materials can be used in commercial devices
+        <a href="#ref-li">(Li et al., 2019)</a>. First, predicting their electronic properties accurately is difficult because real materials behave differently from idealised models. Second, growing large, defect-free sheets of 2D material is technically challenging, with many samples showing grain boundaries or inconsistent thickness. Third, assessing the performance of 2D transistors is hindered by inconsistent measurement techniques, making it difficult to compare results across research groups. These issues highlight why 2D materials remain a long-term rather than immediate solution.
+      </p>
 
-    <h3>Architectural and Algorithmic Solutions Beyond Moore’s Law</h3>
-    <p>
-      Even if transistor scaling slows dramatically, computing performance can still improve through innovations above the device level. Leiserson et al. argue that future gains will come from advances in algorithms, software and system architecture rather than transistor miniaturisation alone
-      <a href="#ref-leiserson">(Leiserson et al., 2020)</a>. For example, modern computing systems already employ heterogeneous architectures, combining CPUs, GPUs and specialised accelerators such as Google’s Tensor Processing Units (TPUs). These designs use transistors more efficiently by tailoring hardware to specific computational tasks
-      <a href="#ref-shalf">(Shalf, 2020)</a>.
-    </p>
-    <p>
-      Another critical insight is that data movement now consumes more energy than computation itself. Shalf shows that moving data even a few millimetres across a chip can consume more energy than performing a 64-bit calculation
-      <a href="#ref-shalf">(Shalf, 2020)</a>. This means future architectures must prioritise data locality, new packaging technologies like three-dimensional integration and, potentially, photonics-based interconnects to reduce energy costs.
-    </p>
-    <p>
-      The shift towards specialised architectures reflects a broader trend: as Moore’s Law slows, the industry can no longer rely on uniform scaling. Instead, computing will become increasingly heterogeneous and application-specific.
-    </p>
+      <h3>4. Architectural and Algorithmic Solutions Beyond Moore’s Law</h3>
+      <p>
+        Even if transistor scaling slows dramatically, computing performance can still improve through innovations above the device level. Leiserson et al. argue that future gains will come from advances in algorithms, software and system architecture rather than transistor miniaturisation alone
+        <a href="#ref-leiserson">(Leiserson et al., 2020)</a>. For example, modern computing systems already employ heterogeneous architectures, combining CPUs, GPUs and specialised accelerators such as Google’s Tensor Processing Units (TPUs). These designs use transistors more efficiently by tailoring hardware to specific computational tasks
+        <a href="#ref-shalf">(Shalf, 2020)</a>.
+      </p>
+      <p>
+        Another critical insight is that data movement now consumes more energy than computation itself. Shalf shows that moving data even a few millimetres across a chip can consume more energy than performing a 64-bit calculation
+        <a href="#ref-shalf">(Shalf, 2020)</a>. This means future architectures must prioritise data locality, new packaging technologies like three-dimensional integration and, potentially, photonics-based interconnects to reduce energy costs.
+      </p>
+      <p>
+        The shift towards specialised architectures reflects a broader trend: as Moore’s Law slows, the industry can no longer rely on uniform scaling. Instead, computing will become increasingly heterogeneous and application-specific.
+      </p>
 
-    <h3>Looking Ahead: A Post-Moore Landscape</h3>
-    <p>
-      Both the Science and Nature articles suggest that while traditional scaling is slowing, innovation is far from over
-      <a href="#ref-leiserson">(Leiserson et al., 2020)</a>;
-      <a href="#ref-li">(Li et al., 2019)</a>.
-      A combination of 2D materials, new transistor designs, heterogeneous architectures and algorithm-level improvements may together sustain performance growth. However, these developments require coordinated advances across materials science, device engineering, computer architecture and software design. As Shalf notes, the transition may take decades, similar to the historical shift from vacuum tubes to silicon
-      <a href="#ref-shalf">(Shalf, 2020)</a>.
-    </p>
+      <h3>5. Looking Ahead: A Post-Moore Landscape</h3>
+      <p>
+        Both the Science and Nature articles suggest that while traditional scaling is slowing, innovation is far from over
+        <a href="#ref-leiserson">(Leiserson et al., 2020)</a>;
+        <a href="#ref-li">(Li et al., 2019)</a>.
+        A combination of 2D materials, new transistor designs, heterogeneous architectures and algorithm-level improvements may together sustain performance growth. However, these developments require coordinated advances across materials science, device engineering, computer architecture and software design. As Shalf notes, the transition may take decades, similar to the historical shift from vacuum tubes to silicon
+        <a href="#ref-shalf">(Shalf, 2020)</a>.
+      </p>
+
+    </div> <!-- end analysis-discussion-section -->
 
     <!-- CONCLUSION -->
-    <h2 id="conclusion">Conclusion</h2>
-    <p>
-      Moore’s Law has been the foundation of modern computing, enabling continuous improvements in performance, efficiency and affordability. Yet the physical limits of silicon, the breakdown of Dennard scaling and the rising cost of fabrication show that traditional transistor miniaturisation cannot continue indefinitely. Despite this, the end of Moore’s Law does not imply the end of progress. Two-dimensional semiconductors offer a possible path to continued scaling, although significant research challenges remain before they can be used in commercial devices. Meanwhile, architectural specialisation, heterogeneous accelerators and algorithmic optimisation provide practical near-term strategies for improving performance without relying solely on smaller transistors. Together, these developments suggest that the future of computing will be shaped not by a single technology, but by a combination of materials innovation, system-level design and software advancements.
-    </p>
+    <h2>Conclusion</h2>
+    <div id="conclusion-section">
+      <p>
+        Moore’s Law has been the foundation of modern computing, enabling continuous improvements in performance, efficiency and affordability. Yet the physical limits of silicon, the breakdown of Dennard scaling and the rising cost of fabrication show that traditional transistor miniaturisation cannot continue indefinitely. Despite this, the end of Moore’s Law does not imply the end of progress. Two-dimensional semiconductors offer a possible path to continued scaling, although significant research challenges remain before they can be used in commercial devices. Meanwhile, architectural specialisation, heterogeneous accelerators and algorithmic optimisation provide practical near-term strategies for improving performance without relying solely on smaller transistors. Together, these developments suggest that the future of computing will be shaped not by a single technology, but by a combination of materials innovation, system-level design and software advancements.
+      </p>
+    </div>
 
     <!-- REFERENCES -->
     <h2 id="references">References</h2>
     <ul>
       <li id="ref-leiserson">
-        Leiserson, C.E., Thompson, N.C., Emer, J.S., et al. (2020) ‘There’s plenty of room at the Top: What will drive computer performance after Moore’s law?’, <i>Science</i>, 368(6495), pp. eaam9744. Available at: https://pubmed.ncbi.nlm.nih.gov/32499413/
+        Leiserson, C.E., Thompson, N.C., Emer, J.S., et al. (2020) ‘There’s plenty of room at the Top: What will drive computer performance after Moore’s law?’, <i>Science</i>, 368(6495), pp. eaam9744. Available at: https://pubmed.ncbi.nlm.nih.gov/32499413/ (Accessed: 5 December 2025).
       </li>
       <li id="ref-li">
-        Li, M.-Y., Su, S.-K., Wong, H.-S.P. and Li, L.-J. (2019) ‘How 2D semiconductors could extend Moore’s law’, <i>Nature</i>, 567, pp. 169–170. Available at: https://www.nature.com/articles/d41586-019-00720-1
+        Li, M.-Y., Su, S.-K., Wong, H.-S.P. and Li, L.-J. (2019) ‘How 2D semiconductors could extend Moore’s law’, <i>Nature</i>, 567, pp. 169–170. Available at: https://www.nature.com/articles/d41586-019-00720-1 (Accessed: 5 December 2025).
       </li>
       <li id="ref-shalf">
-        Shalf, J. (2020) ‘The future of computing beyond Moore’s Law’, <i>Philosophical Transactions of the Royal Society A</i>, 378(2166), pp. 1–15. Available at: https://www.jstor.org/stable/26917444
+        Shalf, J. (2020) ‘The future of computing beyond Moore’s Law’, <i>Philosophical Transactions of the Royal Society A</i>, 378(2166), pp. 1–15. Available at: https://www.jstor.org/stable/26917444 (Accessed: 5 December 2025).
       </li>
     </ul>
 
-    <!-- Last update (timestamp) -->
     <hr>
+
+    <!-- Last update (timestamp) -->
     <div id="last-updated">Loading last update time...</div>
     <button onclick="verifyLastUpdatedTime()" style="margin: 10px 0; padding: 6px 14px;">
       Verify Last Modified Time
@@ -171,7 +282,7 @@
     <!-- Word count display -->
     <p id="totalWordCount"></p>
 
-  </div> <!-- end content -->
+  </div> <!-- end page-container -->
 
   <!-- TIMESTAMP SCRIPT -->
   <script>
@@ -223,9 +334,9 @@
     }
 
     function displayTotalWordCount() {
-      const introCount = getSectionWordCount('introduction');
-      const analysisCount = getSectionWordCount('analysis-discussion');
-      const conclusionCount = getSectionWordCount('conclusion');
+      const introCount = getSectionWordCount('introduction-section');
+      const analysisCount = getSectionWordCount('analysis-discussion-section');
+      const conclusionCount = getSectionWordCount('conclusion-section');
       const total = introCount + analysisCount + conclusionCount;
       document.getElementById('totalWordCount').innerText =
         `Total word count (Introduction + Analysis & Discussion + Conclusion): ${total}`;
