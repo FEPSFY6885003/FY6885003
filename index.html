@@ -178,10 +178,11 @@
     <div id="introduction-section">
       <p>
         Since the 1960s, the semiconductor industry has relied on a trend known as Moore’s Law: the observation that the number of components on an integrated circuit doubles roughly every two years. This scaling has enabled continuous improvements in computing performance, transforming consumer electronics, scientific computing and global communication. For decades, advances in silicon lithography made this progression predictable and economically viable. However, as transistors approach atomic-scale dimensions, the physical foundations supporting Moore’s Law are weakening. Quantum effects, increased fabrication costs and fundamental material limits now constrain further miniaturisation, leading experts to predict that Moore’s Law will plateau in the near future
-        <a href="#ref-shalf">(Shalf, 2020)</a>.
+        <a href="#ref-shalf">(Shalf, 2020)</a>. Major manufacturers such as Intel still use Moore’s Law as a guiding concept, but acknowledge that sustaining its pace requires new approaches
+        <a href="#ref-intel">(Intel, 2023)</a>.
       </p>
       <p>
-        This article explores the causes of this slowdown, including the physical limits of silicon, and examines emerging pathways such as two-dimensional semiconductors and specialised computing architectures that may sustain performance improvements beyond traditional transistor scaling
+        This article explores the causes of this slowdown, including the physical limits of silicon, and examines emerging pathways such as two-dimensional (2D) semiconductors and specialised computing architectures that may sustain performance improvements beyond traditional transistor scaling
         <a href="#ref-li">(Li et al., 2019)</a>;
         <a href="#ref-leiserson">(Leiserson et al., 2020)</a>.
       </p>
@@ -193,17 +194,17 @@
 
       <h3>Why Moore’s Law Is Slowing and the Limits of Silicon</h3>
       <p>
-        Moore’s Law was enabled by the continual reduction in transistor size. Smaller transistors switch faster, consume less power and allow more components to be placed on a single chip. This scaling is now approaching unavoidable limits. The International Technology Roadmap for Semiconductors (ITRS) predicted that lithographic scaling would effectively end around 2021, almost a decade sooner than earlier forecasts
+        Moore’s Law was enabled by continual reductions in transistor size. Smaller transistors switch faster, consume less power and allow more components to be placed on a single chip. This scaling is now approaching unavoidable limits. The International Technology Roadmap for Semiconductors (ITRS) predicted that lithographic scaling would effectively end around 2021
         <a href="#ref-shalf">(Shalf, 2020)</a>. At gate lengths of only a few nanometres, a very small number of silicon atoms define the critical features of each transistor, making further miniaturisation extremely difficult.
       </p>
       <p>
-        The breakdown of Dennard scaling has amplified these problems. Dennard scaling assumed that power density remained constant as transistors shrank, allowing clock speeds to increase each generation. This relationship failed around 2004, leading to stagnating clock frequencies and a shift towards multi-core processors. Shalf shows that since the mid-2000s, increases in performance, clock rate and core count have all flattened, indicating that adding more transistors no longer delivers proportional performance gains
+        A key factor is the breakdown of Dennard scaling, the idea that as transistors shrink, their power density stays roughly constant. This relationship failed around 2004, leading to stagnating clock frequencies and a shift towards multi-core processors. Shalf shows that since the mid-2000s, increases in performance and clock rate have flattened, indicating that adding more transistors no longer delivers proportional gains
         <a href="#ref-shalf">(Shalf, 2020)</a>. At the same time, each new generation of fabrication equipment is significantly more expensive, reducing the economic benefits of further scaling and contributing to the expectation that Moore’s Law will “flatten by 2025”
         <a href="#ref-shalf">(Shalf, 2020)</a>.
       </p>
       <p>
         Material physics also impose hard limits. As channels become extremely thin, electrons experience increased scattering from imperfections on surfaces and interfaces, reducing their mobility and slowing current flow. Even alternative bulk semiconductors, such as germanium or indium gallium arsenide, suffer from degraded performance when reduced to nanometre thicknesses
-        <a href="#ref-li">(Li et al., 2019)</a>. In addition, quantum mechanical effects such as tunnelling and leakage currents become more pronounced, increasing power consumption and device variability. These issues show that the slowdown of Moore’s Law is driven by both economic and physical constraints.
+        <a href="#ref-li">(Li et al., 2019)</a>. Quantum mechanical effects such as tunnelling and leakage currents become more pronounced, increasing power consumption and device variability. These issues show that the slowdown of Moore’s Law is driven by both economic and physical constraints.
       </p>
 
       <h3>Two-Dimensional Materials as a Potential Successor</h3>
@@ -213,18 +214,43 @@
       </p>
       <p>
         However, Li et al. emphasise that several major research challenges must be overcome before two-dimensional materials can be used in commercial devices
-        <a href="#ref-li">(Li et al., 2019)</a>. Predicting their electronic properties accurately is difficult because real samples deviate from ideal models. Growing large, uniform and low-defect films is technically demanding, with many samples showing grain boundaries and thickness variations. Performance comparisons between devices are further complicated by inconsistent fabrication and measurement techniques. As a result, two-dimensional materials are best viewed as a long-term candidate for extending Moore’s Law rather than an immediate replacement for silicon technology.
+        <a href="#ref-li">(Li et al., 2019)</a>. Predicting their electronic properties accurately is difficult because real samples deviate from ideal models. Growing large, uniform and low-defect films is technically demanding, with many samples showing grain boundaries and thickness variations. Performance comparisons between devices are further complicated by inconsistent fabrication and measurement techniques. As a result, 2D materials are best viewed as a long-term candidate for extending Moore’s Law rather than an immediate replacement for silicon technology.
       </p>
+
+      <!-- COMPARISON TABLE -->
+      <table class="w3-table-all" style="margin-top:15px;">
+        <tr>
+          <th>Approach</th>
+          <th>Potential Benefit</th>
+          <th>Main Challenge</th>
+        </tr>
+        <tr>
+          <td>2D Semiconductors</td>
+          <td>Enable thinner channels and reduced electron scattering</td>
+          <td>Difficult to grow large, defect-free films</td>
+        </tr>
+        <tr>
+          <td>Heterogeneous Architectures</td>
+          <td>Better performance for specific workloads (e.g. AI, graphics)</td>
+          <td>More complex hardware–software design</td>
+        </tr>
+        <tr>
+          <td>Advanced Packaging</td>
+          <td>Improves data locality and reduces communication distance</td>
+          <td>Thermal management and manufacturing complexity</td>
+        </tr>
+      </table>
+      <p><b>Table 1:</b> Summary of selected approaches to sustain computing performance beyond traditional transistor scaling.</p>
 
       <h3>Architectural and Algorithmic Solutions Beyond Moore’s Law</h3>
       <p>
         Even if transistor scaling slows dramatically, computing performance can still improve through innovations above the device level. Leiserson et al. argue that future gains will increasingly come from advances in algorithms, software and system architecture rather than from transistor miniaturisation alone
-        <a href="#ref-leiserson">(Leiserson et al., 2020)</a>. Modern systems already employ heterogeneous architectures, combining CPUs, GPUs and specialised accelerators such as Google’s Tensor Processing Units (TPUs). These designs use transistors more efficiently by tailoring hardware to specific computational tasks, rather than relying on a single general-purpose processor for all workloads
+        <a href="#ref-leiserson">(Leiserson et al., 2020)</a>. Modern systems already employ heterogeneous architectures, which are systems that combine different types of processors such as CPUs, GPUs and specialised accelerators like Google’s Tensor Processing Units (TPUs). These designs use transistors more efficiently by tailoring hardware to specific computational tasks, rather than relying on a single general-purpose processor for all workloads
         <a href="#ref-shalf">(Shalf, 2020)</a>.
       </p>
       <p>
-        Another critical insight is that data movement now consumes more energy than computation itself. Shalf shows that moving data even a few millimetres across a chip can require more energy than performing a 64-bit arithmetic operation
-        <a href="#ref-shalf">(Shalf, 2020)</a>. This implies that future architectures must prioritise data locality, employ advanced packaging techniques such as three-dimensional integration and, in some cases, use photonic interconnects to reduce the energy cost of communication. In this post-Moore environment, performance improvements depend increasingly on how efficiently data and computation are organised, and on the co-design of hardware and algorithms.
+        Another important insight is that data movement now consumes more energy than computation itself. Shalf shows that moving data even a few millimetres across a chip can require more energy than performing a 64-bit arithmetic operation
+        <a href="#ref-shalf">(Shalf, 2020)</a>. This implies that future architectures must prioritise data locality, employ advanced packaging techniques such as three-dimensional integration and, in some cases, use photonic interconnects – links that use light instead of electrical signals – to reduce the energy cost of communication. In this post-Moore environment, performance improvements depend increasingly on how efficiently data and computation are organised, and on the co-design of hardware and algorithms.
       </p>
 
     </div> <!-- end analysis-discussion-section -->
@@ -243,13 +269,20 @@
     <h2 id="references">References</h2>
     <ul>
       <li id="ref-leiserson">
-        Leiserson, C.E., Thompson, N.C., Emer, J.S., et al. (2020) ‘There’s plenty of room at the Top: What will drive computer performance after Moore’s law?’, <i>Science</i>, 368(6495), pp. eaam9744. Available at: https://pubmed.ncbi.nlm.nih.gov/32499413/.
+        Leiserson, C.E., Thompson, N.C., Emer, J.S., et al. (2020) ‘There’s plenty of room at the Top: What will drive computer performance after Moore’s law?’, <i>Science</i>, 368(6495), pp. eaam9744. Available at:
+        <a href="https://pubmed.ncbi.nlm.nih.gov/32499413/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/32499413/</a>.
       </li>
       <li id="ref-li">
-        Li, M.-Y., Su, S.-K., Wong, H.-S.P. and Li, L.-J. (2019) ‘How 2D semiconductors could extend Moore’s law’, <i>Nature</i>, 567, pp. 169–170. Available at: https://www.nature.com/articles/d41586-019-00720-1.
+        Li, M.-Y., Su, S.-K., Wong, H.-S.P. and Li, L.-J. (2019) ‘How 2D semiconductors could extend Moore’s law’, <i>Nature</i>, 567, pp. 169–170. Available at:
+        <a href="https://www.nature.com/articles/d41586-019-00720-1" target="_blank">https://www.nature.com/articles/d41586-019-00720-1</a>.
       </li>
       <li id="ref-shalf">
-        Shalf, J. (2020) ‘The future of computing beyond Moore’s Law’, <i>Philosophical Transactions of the Royal Society A</i>, 378(2166), pp. 1–15. Available at: https://www.jstor.org/stable/26917444.
+        Shalf, J. (2020) ‘The future of computing beyond Moore’s Law’, <i>Philosophical Transactions of the Royal Society A</i>, 378(2166), pp. 1–15. Available at:
+        <a href="https://www.jstor.org/stable/26917444" target="_blank">https://www.jstor.org/stable/26917444</a>.
+      </li>
+      <li id="ref-intel">
+        Intel Corporation (2023) ‘Moore’s Law: Past, Present and Future’. Available at:
+        <a href="https://www.intel.com/content/www/us/en/newsroom/news/moores-law.html" target="_blank">https://www.intel.com/content/www/us/en/newsroom/news/moores-law.html</a>.
       </li>
     </ul>
 
